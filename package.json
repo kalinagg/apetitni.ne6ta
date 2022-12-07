@@ -25,7 +25,7 @@
     "url": "https://github.com/kalinagg/apetitni.ne6ta..git"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "18.x"
