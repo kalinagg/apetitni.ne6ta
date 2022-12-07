@@ -15,7 +15,7 @@ import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import UndoIcon from '@material-ui/icons/Undo';
 import compressImage from 'browser-image-compression';
 import history from '../../helpers/history';
-import newRecipeImageUrl from '../../new-recipe.jpg';
+import NoRecipeImage from './images/no-recipe-image.jpg';
 import './Recipe.scss';
 import { RootState, IRecipe } from '../../types';
 import { deleteRecipeFromServer, selectRecipe, upsertRecipe } from '../../actions';
@@ -48,7 +48,7 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                 id: '',
                 title: '',
                 instructions: '',
-                img: newRecipeImageUrl,
+                img: NoRecipeImage,
                 ingredients: ''}
             : props.recipe;
 
