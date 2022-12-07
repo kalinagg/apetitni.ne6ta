@@ -4,11 +4,11 @@ require('dotenv').config();
 
 class RecipeManager {
     constructor() {
-        this.MONGODB_URL = 'mongodb+srv://' + process.env.MONGODB_URL + '/recipes';
+        this.MONGODB_URI = process.env.MONGODB_URI;
     }
 
     async getRecipes() {
-        const client = new MongoClient(this.MONGODB_URL);
+        const client = new MongoClient(this.MONGODB_URI);
     
         try {
             await client.connect();
@@ -21,7 +21,7 @@ class RecipeManager {
     }
 
     async addRecipe(recipe) {
-        const client = new MongoClient(this.MONGODB_URL);
+        const client = new MongoClient(this.MONGODB_URI);
     
         try {
             await client.connect();
@@ -40,7 +40,7 @@ class RecipeManager {
     }
 
     async updateRecipe(recipe) {
-        const client = new MongoClient(this.MONGODB_URL);
+        const client = new MongoClient(this.MONGODB_URI);
     
         try {
             await client.connect();
@@ -59,7 +59,7 @@ class RecipeManager {
     }
 
     async deleteRecipe(recipeId) {
-        const client = new MongoClient(this.MONGODB_URL);
+        const client = new MongoClient(this.MONGODB_URI);
     
         try {
             await client.connect();
