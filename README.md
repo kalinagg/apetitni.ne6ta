@@ -1,8 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripte for the Server App
 
-In the project directory, you can run:
+In the project directory api, you can run:
+
+### `npm run start`
+
+## Available Scripts for the Client App
+
+In the project directory client, you can run:
 
 ### `npm run dev`
 

@@ -9,9 +9,9 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import ShareIcon from '@material-ui/icons/Share';
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
-import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import SaveIcon from '@material-ui/icons/SaveOutlined';
 import UndoIcon from '@material-ui/icons/Undo';
 import compressImage from 'browser-image-compression';
 import history from '../../helpers/history';
@@ -214,23 +214,23 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                         </div>
                         <div className="recipe-input-container">
                             <CardActions className={clsx(classes.cardActions)} disableSpacing>
-                                <IconButton className="edit-icon" aria-label="Edit"
+                                <IconButton className="edit-icon" aria-label="Edit" title="Edit"
                                     onClick={this.handleEdit}>
                                     <EditIcon />
                                 </IconButton>
-                                <IconButton className="undo-icon" aria-label="Undo"
+                                <IconButton className="undo-icon" aria-label="Undo" title="Undo"
                                     onClick={this.handleCancel}>
                                     <UndoIcon />
                                 </IconButton>
-                                <IconButton className="save-icon" aria-label="Save"
+                                <IconButton className="save-icon" aria-label="Save" title="Save"
                                     onClick={async () => await this.handleSave(recipe)}>
-                                    <SaveAltIcon />
+                                    <SaveIcon />
                                 </IconButton>
-                                <IconButton className="share-icon" aria-label="Share">
+                                <IconButton className="share-icon" aria-label="Share" title="Share">
                                     <ShareIcon />
                                 </IconButton>                                
                                 <IconButton
-                                    className="delete-icon" aria-label="Delete"
+                                    className="delete-icon" aria-label="Delete" title="Delete" 
                                     onClick={async () => await this.handleDelete(recipe.id)}>
                                     <DeleteIcon />
                                 </IconButton>
@@ -280,6 +280,28 @@ class Recipe extends Component<IRecipeProps, IRecipeState> {
                             value={recipe.instructions}
                             onChange={this.updateField('instructions')} />
                     </div>
+                    <CardActions className={clsx(classes.cardActions)} disableSpacing>
+                        <IconButton className="edit-icon" aria-label="Edit" title="Edit"
+                            onClick={this.handleEdit}>
+                            <EditIcon />
+                        </IconButton>
+                        <IconButton className="undo-icon" aria-label="Undo" title="Undo"
+                            onClick={this.handleCancel}>
+                            <UndoIcon />
+                        </IconButton>
+                        <IconButton className="save-icon" aria-label="Save" title="Save"
+                            onClick={async () => await this.handleSave(recipe)}>
+                            <SaveIcon />
+                        </IconButton>
+                        <IconButton className="share-icon" aria-label="Share" title="Share">
+                            <ShareIcon />
+                        </IconButton>                                
+                        <IconButton
+                            className="delete-icon" aria-label="Delete" title="Delete" 
+                            onClick={async () => await this.handleDelete(recipe.id)}>
+                            <DeleteIcon />
+                        </IconButton>
+                    </CardActions>
                 </CardContent>
             </Card>
         );
