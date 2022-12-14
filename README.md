@@ -8,7 +8,7 @@ In the project directory api, you can run:
 
 ## Available Scripts for the Client App
 
-In the project directory client, you can run:
+In the project directory, you can run:
 
 ### `npm run dev`
 
