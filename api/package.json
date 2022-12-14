@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kalinagg/apetitni.ne6ta..git"
+    "url": "https://github.com/kalinagg/apetitni.ne6ta.git"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
