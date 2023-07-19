@@ -1,8 +1,12 @@
 import { IRecipe } from '../types';
 
+const baseUrl = process.env.NODE_ENV === "production"
+    ? "https://apetitni-ne6ta-api.vercel.app"
+    : "http://localhost:3000";
+
 export default class RecipeManagerClient {
-    async getRecipes(): Promise<IRecipe[]> {        
-        const response = await fetch('/recipes');
+    async getRecipes(): Promise<IRecipe[]> {
+        const response = await fetch(baseUrl + '/recipes');
         
         if(!response.ok) {
             throw new Error('Could not get recipes.');
@@ -13,7 +17,7 @@ export default class RecipeManagerClient {
 
     async upsertRecipe(recipe: IRecipe): Promise<string> {
         const add = recipe.id === '';
-        const url = add ? '/recipes/add' : '/recipes/update';
+        const url = add ? baseUrl + '/recipes/add' : baseUrl + '/recipes/update';
 
         const response = await fetch(url, {
             method: 'POST',
@@ -29,7 +33,7 @@ export default class RecipeManagerClient {
     }
 
     async deleteRecipe(recipeId: string) {
-        const response = await fetch('/recipes/delete', {
+        const response = await fetch(baseUrl + '/recipes/delete', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({id: recipeId})
