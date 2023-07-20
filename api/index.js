@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const app = express();
@@ -7,11 +8,12 @@ const RecipeManager = require('./RecipeManagerServer.js');
 const recipeManager = new RecipeManager();
 
 app.use(bodyParser.json());
+app.use(cors({origin: 'https://apetitni-ne6ta.vercel.app'}));
 
 app.get('/recipes', async (req, res) => {
     try {
         const recipes = await recipeManager.getRecipes();
-        res.setHeader('Content-Type', 'application/json');    
+        res.setHeader('Content-Type', 'application/json');
         res.status(200).send(recipes);
     } catch(err) {
         res.status(500).send();
