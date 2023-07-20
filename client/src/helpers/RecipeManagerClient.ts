@@ -2,7 +2,7 @@ import { IRecipe } from '../types';
 
 const baseUrl = process.env.NODE_ENV === "production"
     ? "https://apetitni-ne6ta-api.vercel.app"
-    : "http://localhost:3000";
+    : "";
 
 export default class RecipeManagerClient {
     async getRecipes(): Promise<IRecipe[]> {
